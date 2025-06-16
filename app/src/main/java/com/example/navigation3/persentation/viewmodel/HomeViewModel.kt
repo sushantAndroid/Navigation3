@@ -120,14 +120,5 @@ data class User(
     val avatarUrl: String? = null
 )
 
-@Module
-@InstallIn(SingletonComponent::class)
-abstract class RepositoryModule {
 
-    @Binds
-    @Singleton
-    abstract fun bindUserRepository(
-        userRepositoryImpl: UserRepositoryImpl // Fixed: bind to the implementation class
-    ): UserRepository
-}
 

@@ -1,6 +1,5 @@
 package com.example.navigation3.domain.navigation
 
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -9,14 +8,14 @@ import javax.inject.Singleton
 
 
 @Singleton
-class NavManagerImpl  @Inject constructor(): NavManager {
+class NavManagerImpl @Inject constructor() : NavManager {
 
     private val _navEvents = MutableSharedFlow<NavEvents>()
     override val navEvents: SharedFlow<NavEvents> = _navEvents.asSharedFlow()
 
     override suspend fun navigateTo(
         destination: NavDestination,
-        clearBackStack: Boolean
+        clearBackStack: Boolean,
     ) {
         _navEvents.emit(
             NavEvents.NavigateTo(destination, clearBackStack)
@@ -29,7 +28,7 @@ class NavManagerImpl  @Inject constructor(): NavManager {
 
     override suspend fun navigateBackTo(
         destination: NavDestination,
-        inclusive: Boolean
+        inclusive: Boolean,
     ) {
         _navEvents.emit(
             NavEvents.NavigateBackTo(destination, inclusive)

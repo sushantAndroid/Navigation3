@@ -26,7 +26,7 @@ import com.example.navigation3.utils.navigateToDestination
 @Composable
 fun AppNavigation(
     navController: NavHostController = rememberNavController(),
-    navigationViewModel: NavigationViewModel
+    navigationViewModel: NavigationViewModel,
 ) {
     val bottomSheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true

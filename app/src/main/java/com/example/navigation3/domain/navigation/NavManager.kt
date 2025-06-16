@@ -7,14 +7,14 @@ interface NavManager {
 
     suspend fun navigateTo(
         destination: NavDestination,
-        clearBackStack: Boolean = false
+        clearBackStack: Boolean = false,
     )
 
     suspend fun navigateBack()
 
     suspend fun navigateBackTo(
         destination: NavDestination,
-        inclusive: Boolean = false
+        inclusive: Boolean = false,
     )
 
     suspend fun navigateAndClearStack(destination: NavDestination)

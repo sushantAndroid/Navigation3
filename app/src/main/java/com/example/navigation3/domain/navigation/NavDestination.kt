@@ -17,13 +17,13 @@ sealed class NavDestination {
     @Serializable
     data class UserDetail(
         val userId: String,
-        val userName: String = ""
+        val userName: String = "",
     ) : NavDestination()
 
     @Serializable
     data class ProductDetail(
         val productId: String,
-        val categoryId: String? = null
+        val categoryId: String? = null,
     ) : NavDestination()
 
     @Serializable
